@@ -16,8 +16,6 @@
 //   return result.reduce((a,b)=>a+b,0)
 // }
 
-
-
 // Who likes it?
 
 // function likes(names:string[]):string {
@@ -87,4 +85,227 @@
 // }
 // console.log(arrayDiff( [1,2,3],[1,2]))
 
+// Stop gninnipS My sdroW!
 
+// function spinWords(string:string){
+//   return string.replace(/\w+/ig,(e)=>reverseString(e))
+
+//   function reverseString (string:string):string{
+//     let result:string=''
+//     for(let i = string.length-1 ; i > -1 ; i-- ) {
+//       result += string[i]
+//     }
+//     return result
+//   }
+// }
+// console.log(spinWords("Hey fellow warriors"))
+
+// Sum of Digits / Digital Root
+// const digitalRoot = (n:number):number => {
+//   let str = n.toString();
+//   let result = 0;
+//   while (true) {
+//     for (let i of str) {
+//       result += +i;
+//     }
+//     if (str.length === 1) {
+//       break;
+//     }
+//     str = result.toString();
+//     result = 0;
+//   }
+//   return result;
+// };
+
+// console.log(digitalRoot(456))
+
+// Bit Counting
+
+// const countBits = function (n: number) {
+//   let result = 0;
+//   for (let i of n.toString(2)) {
+//     if (i === "1") {
+//       result += 1;
+//     }
+//   }
+//   return result;
+// };
+// console.log(countBits(10));
+
+// Counting Duplicates
+
+// function duplicateCount(text: string) {
+//   // soultion 1
+//   let result: string[] = [];
+//   for (let i = 0; i < text.length; i++) {
+//     for (let j = i; j < text.length; j++) {
+//       if (text[i] === text[j + 1]) {
+//         result.push(text[i]);
+//         break;
+//       }
+//     }
+//   }
+//   return [...new Set(result)].length;
+// }
+
+// console.log(duplicateCount("Indivibaadskjfsibility"));
+
+// Duplicate Encoder
+
+// function duplicateEncode(word: string): string {
+//   // ...
+//   word = word.toLowerCase();
+//   let result: string = "";
+//   if (word.length === 0) {
+//     return "";
+//   }
+
+//   for (let i of word) {
+//     console.log(count(word, i));
+//     count(word, i) === 1 ? (result += "(") : (result += ")");
+//   }
+
+//   function count(itre: string, value: any): number {
+//     let num = 0;
+//     for (let i of itre) {
+//       if (i === value) {
+//         num += 1;
+//       }
+//     }
+//     return num;
+//   }
+
+//   return result;
+// }
+// console.log(duplicateEncode("CodeWarrior"));
+
+// Find The Parity Outlier
+
+/*
+
+[2, 4, 0, 100, 4, 11, 2602, 36]
+
+
+*/
+
+// function findOutlier(integers: number[]) {
+//   let even = 0;
+//   let odd = 0;
+//   let evenVal = 0;
+//   let oddVal = 0;
+
+//   for (let i of integers) {
+//     if (i % 2) {
+//       odd++;
+//       oddVal = i;
+//     } else {
+//       even++;
+//       evenVal = i;
+//     }
+//     if (even === 1 && odd > 1) {
+//       return evenVal;
+//     }
+//     if (odd === 1 && even > 1) {
+//       return oddVal;
+//     }
+//   }
+// }
+
+// console.log(findOutlier([1, 2, 3, 4, 5]));
+// console.log(findOutlier([2, 3, 4, 5, 6]));
+// console.log(findOutlier([1, 1, 2, 2, 3]));
+// console.log(findOutlier([1, 2, 1, 2, 3]));
+
+// Replace With Alphabet Position
+
+// function alphabetPosition(text: string) {
+//   // soulution 1
+//   // let result = "";
+//   // text = text.toLowerCase();
+//   // for (let i of text) {
+//   //   let code = i.charCodeAt(0);
+//   //   if (code >= 97 && code <= 122) {
+//   //     result += `${+code - 96} `;
+//   //   }
+//   // }
+//   // return result.slice(0, -1);
+//   // sulution 2
+//   return text.replace(/[a-z]/gi, (e) => (e.charCodeAt(0) - 96).toString());//not work
+// }
+
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+// Take a Ten Minutes Walk
+
+// function isValidWalk(walk: string[]) {
+//   let top = 0;
+//   let left = 0;
+//   walk.map((e) => {
+//     if (e === "w") {
+//       top++;
+//     } else if (e === "e") {
+//       top--;
+//     } else if (e === "s") {
+//       left++;
+//     } else if (e === "n") {
+//       left--;
+//     }
+//   });
+//   return top === 0 && left === 0;
+// }
+// console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
+// console.log(isValidWalk(["n", "n", "n", "s", "n", "s", "n", "s", "n", "s"]));
+
+// Persistent Bugger.
+
+// // soulution 1
+// function persistence(num) {
+//   let numString = num.toString();
+//   let result = 1;
+//   let count = 0;
+//   while (true) {
+//     if (numString.length === 1) {
+//       break;
+//     }
+//     for (let i of numString) {
+//       result *= +i;
+//     }
+//     numString = result.toString();
+//     result = 1;
+//     count++;
+//   }
+//   return count;
+// }
+// // soutution 2
+
+// let count = 0;
+// function persistence(num: number, next?: string | undefined) {
+//   if (next?.toString().length === 1) {
+//     return count;
+//   }
+//   count++;
+//   next = num
+//     .toString()
+//     .split("")
+//     .reduce((a, b) => +a * +b, 1)
+//     .toString();
+//   num = +next;
+//   return persistence(num, next);
+// }
+
+// console.log(persistence(999));
+function persistence(num: string | number) {
+  var times = 0;
+
+  num = num.toString();
+
+  while (num.length > 1) {
+    times++;
+    num = num
+      .split("")
+      .reduce((a, b) => +a * +b, 1)
+      .toString();
+  }
+
+  return times;
+}
+console.log(persistence(999));
