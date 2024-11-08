@@ -293,19 +293,43 @@
 // }
 
 // console.log(persistence(999));
-function persistence(num: string | number) {
-  var times = 0;
 
-  num = num.toString();
+// Convert string to camel case
 
-  while (num.length > 1) {
-    times++;
-    num = num
-      .split("")
-      .reduce((a, b) => +a * +b, 1)
-      .toString();
-  }
+// function toCamelCase(str: string) {
+//   return str.replace(/(-|_)\w/g, (e, i, arr) => e[1].toUpperCase());
+// }
 
-  return times;
-}
-console.log(persistence(999));
+// console.log(toCamelCase("the-stealth-warrior"));
+
+// Unique In Order
+
+// var uniqueInOrder = function (iterable: any) {
+//   let result = [];
+//   for (let i = 0; i < iterable.length; i++) {
+//     if (iterable[i] !== iterable[i + 1]) {
+//       result.push(iterable[i]);
+//     }
+//   }
+//   return result;
+// };
+
+// console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+// console.log(uniqueInOrder("ABBCcAD"));
+// console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+
+// Detect Pangram
+
+// function isPangram(string: string) {
+//   //...
+
+//   string = string.toLowerCase()
+//   let letters = "abcdefghijklmnopqrstuvwxyz";
+//   for (let i of letters) {
+//     if (!string.includes(i)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isPangram("nabcdefghijklmopqrstuvwxyz"));
