@@ -333,3 +333,51 @@
 //   return true;
 // }
 // console.log(isPangram("nabcdefghijklmopqrstuvwxyz"));
+
+// Does my number look big in this?
+
+// function narcissistic(value: number) {
+//   // Code me to return true or false
+
+//   /*
+//   153
+//   "153"
+//   loop in str
+//     resul += str[0] ** str.length
+//   return value === result
+//   */
+
+//   let result = 0;
+//   let valueStr = value.toString();
+//   let valueLength = valueStr.length;
+
+//   for (let i of valueStr) {
+//     result += parseInt(i) ** valueLength;
+//   }
+//   return value === result;
+// }
+// console.log(narcissistic(1235));
+
+// Your order, please
+
+function order(words: string) {
+  return words
+    .split(" ")
+    .sort((a, b) => getNumber(a) - getNumber(b))
+    .join(" ");
+
+  function getNumber(str: string) {
+    let value = "";
+    for (let i = 0; i < str.length; i++) {
+      if (Number.isInteger(parseInt(str[i]))) {
+        value += str[i];
+        if (!Number.isInteger(parseInt(str[i + 1]))) {
+          break;
+        }
+      }
+    }
+    return Number(value);
+  }
+}
+
+console.log(order("is2 Thi1s T4est 3a"));

@@ -629,4 +629,4 @@
 // console.log(removeSmallest([1, 2, 3, 4, 5]));
 // const array1 = [5, 12, 8, 130, 44];
 
-// console.log(array1.findIndex((e) => e > e));
+// console.log(array1.findIndex((e) => e > e)
