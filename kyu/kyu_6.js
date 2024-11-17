@@ -220,37 +220,166 @@
 // console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
 // console.log(isValidWalk(["n", "n", "n", "s", "n", "s", "n", "s", "n", "s"]));
 // Persistent Bugger.
-// soulution 1
-// let numString = num.toString();
-// let result = 1;
-// let count = 0;
-// while (true) {
-//   if (numString.length === 1) {
-//     break;
+// // soulution 1
+// function persistence(num) {
+//   let numString = num.toString();
+//   let result = 1;
+//   let count = 0;
+//   while (true) {
+//     if (numString.length === 1) {
+//       break;
+//     }
+//     for (let i of numString) {
+//       result *= +i;
+//     }
+//     numString = result.toString();
+//     result = 1;
+//     count++;
 //   }
-//   for (let i of numString) {
-//     result *= +i;
-//   }
-//   numString = result.toString();
-//   result = 1;
-//   count++;
+//   return count;
 // }
-// return count;
-// soutution 2
-let count = 0;
-function persistence(num, next) {
-  if (
-    (next === null || next === void 0 ? void 0 : next.toString().length) === 1
-  ) {
-    return count;
-  }
-  count++;
-  next = num
-    .toString()
-    .split("")
-    .reduce((a, b) => +a * +b, 1)
-    .toString();
-  num = +next;
-  return persistence(num, next);
-}
-console.log(persistence(39));
+// // soutution 2
+// let count = 0;
+// function persistence(num: number, next?: string | undefined) {
+//   if (next?.toString().length === 1) {
+//     return count;
+//   }
+//   count++;
+//   next = num
+//     .toString()
+//     .split("")
+//     .reduce((a, b) => +a * +b, 1)
+//     .toString();
+//   num = +next;
+//   return persistence(num, next);
+// }
+// console.log(persistence(999));
+// Convert string to camel case
+// function toCamelCase(str: string) {
+//   return str.replace(/(-|_)\w/g, (e, i, arr) => e[1].toUpperCase());
+// }
+// console.log(toCamelCase("the-stealth-warrior"));
+// Unique In Order
+// var uniqueInOrder = function (iterable: any) {
+//   let result = [];
+//   for (let i = 0; i < iterable.length; i++) {
+//     if (iterable[i] !== iterable[i + 1]) {
+//       result.push(iterable[i]);
+//     }
+//   }
+//   return result;
+// };
+// console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+// console.log(uniqueInOrder("ABBCcAD"));
+// console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+// Detect Pangram
+// function isPangram(string: string) {
+//   //...
+//   string = string.toLowerCase()
+//   let letters = "abcdefghijklmnopqrstuvwxyz";
+//   for (let i of letters) {
+//     if (!string.includes(i)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isPangram("nabcdefghijklmopqrstuvwxyz"));
+// Does my number look big in this?
+// function narcissistic(value: number) {
+//   // Code me to return true or false
+//   /*
+//   153
+//   "153"
+//   loop in str
+//     resul += str[0] ** str.length
+//   return value === result
+//   */
+//   let result = 0;
+//   let valueStr = value.toString();
+//   let valueLength = valueStr.length;
+//   for (let i of valueStr) {
+//     result += parseInt(i) ** valueLength;
+//   }
+//   return value === result;
+// }
+// console.log(narcissistic(1235));
+// Your order, please
+// function order(words: string) {
+//   return words
+//     .split(" ")
+//     .sort((a, b) => getNumber(a) - getNumber(b))
+//     .join(" ");
+//   function getNumber(str: string) {
+//     let value = "";
+//     for (let i = 0; i < str.length; i++) {
+//       if (Number.isInteger(parseInt(str[i]))) {
+//         value += str[i];
+//         if (!Number.isInteger(parseInt(str[i + 1]))) {
+//           break;
+//         }
+//       }
+//     }
+//     return Number(value);
+//   }
+// }
+// console.log(order("is2 Thi1s T4est 3a"));
+// Split Strings
+// function solution(str: string) {
+//   let result = [];
+//   for (let i = 0; i < str.length; i += 2) {
+//     result.push(`${str[i]}${str[i + 1]}`);
+//   }
+//   if (str.length % 2 !== 0) {
+//     result.pop();
+//     result.push(`${str[str.length - 1]}_`);
+//   }
+//   return result;
+// }
+// console.log(solution("abc"));
+// console.log(solution("abcdef"));
+// Tribonacci Sequence
+// function tribonacci(signature: number[], n: number) {
+//   switch (n) {
+//     case 0:
+//       return [];
+//       break;
+//     case 1:
+//       return [signature[0]];
+//       break;
+//     case 2:
+//       return [signature[0], signature[1]];
+//       break;
+//   }
+//   for (let i = 0; i < n - 3; i++) {
+//     signature.push(sum(signature));
+//   }
+//   return signature;
+//   function sum(arr: number[]) {
+//     let result = 0;
+//     for (let i = arr.length - 1; i > arr.length - 4; i--) {
+//       result += arr[i];
+//     }
+//     return result;
+//   }
+// }
+// console.log(tribonacci([1, 1, 1], 2));
+// Find the unique number
+// function findUniq(arr: number[]) {
+//   let one = arr[0];
+//   let two = arr[1];
+//   let three = arr[2];
+//   let notMatch: number | undefined;
+//   if (one === two) {
+//     notMatch = one;
+//   } else if (one === three) {
+//     notMatch = one;
+//   } else if (two === three) {
+//     notMatch = two;
+//   }
+//   for (let i of arr) {
+//     if (i !== notMatch) {
+//       return i;
+//     }
+//   }
+// }

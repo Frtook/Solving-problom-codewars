@@ -360,24 +360,92 @@
 
 // Your order, please
 
-function order(words: string) {
-  return words
-    .split(" ")
-    .sort((a, b) => getNumber(a) - getNumber(b))
-    .join(" ");
+// function order(words: string) {
+//   return words
+//     .split(" ")
+//     .sort((a, b) => getNumber(a) - getNumber(b))
+//     .join(" ");
 
-  function getNumber(str: string) {
-    let value = "";
-    for (let i = 0; i < str.length; i++) {
-      if (Number.isInteger(parseInt(str[i]))) {
-        value += str[i];
-        if (!Number.isInteger(parseInt(str[i + 1]))) {
-          break;
-        }
-      }
-    }
-    return Number(value);
-  }
-}
+//   function getNumber(str: string) {
+//     let value = "";
+//     for (let i = 0; i < str.length; i++) {
+//       if (Number.isInteger(parseInt(str[i]))) {
+//         value += str[i];
+//         if (!Number.isInteger(parseInt(str[i + 1]))) {
+//           break;
+//         }
+//       }
+//     }
+//     return Number(value);
+//   }
+// }
 
-console.log(order("is2 Thi1s T4est 3a"));
+// console.log(order("is2 Thi1s T4est 3a"));
+
+// Split Strings
+
+// function solution(str: string) {
+//   let result = [];
+//   for (let i = 0; i < str.length; i += 2) {
+//     result.push(`${str[i]}${str[i + 1]}`);
+//   }
+//   if (str.length % 2 !== 0) {
+//     result.pop();
+//     result.push(`${str[str.length - 1]}_`);
+//   }
+//   return result;
+// }
+// console.log(solution("abc"));
+// console.log(solution("abcdef"));
+
+// Tribonacci Sequence
+
+// function tribonacci(signature: number[], n: number) {
+//   switch (n) {
+//     case 0:
+//       return [];
+//       break;
+//     case 1:
+//       return [signature[0]];
+//       break;
+//     case 2:
+//       return [signature[0], signature[1]];
+//       break;
+//   }
+//   for (let i = 0; i < n - 3; i++) {
+//     signature.push(sum(signature));
+//   }
+
+//   return signature;
+//   function sum(arr: number[]) {
+//     let result = 0;
+//     for (let i = arr.length - 1; i > arr.length - 4; i--) {
+//       result += arr[i];
+//     }
+//     return result;
+//   }
+// }
+// console.log(tribonacci([1, 1, 1], 2));
+
+// Find the unique number
+
+// function findUniq(arr: number[]) {
+//   let one = arr[0];
+//   let two = arr[1];
+//   let three = arr[2];
+//   let notMatch: number | undefined;
+//   if (one === two) {
+//     notMatch = one;
+//   } else if (one === three) {
+//     notMatch = one;
+//   } else if (two === three) {
+//     notMatch = two;
+//   }
+
+//   for (let i of arr) {
+//     if (i !== notMatch) {
+//       return i;
+//     }
+//   }
+
+// }
