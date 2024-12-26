@@ -449,3 +449,121 @@
 //   }
 
 // }
+
+// let arr: string[] = ["ibrahim", "ail", "omar", "osama"];
+// let arrRandom: string[] = Array(arr.length).fill(null);
+
+// let randomValue: number[] = [];
+// let i = 0;
+
+// while (i < arr.length) {
+//   const randomNumber = Math.floor(Math.random() * arr.length);
+//   if (!randomValue.includes(randomNumber)) {
+//     arrRandom[randomNumber] = arr[i];
+//     randomValue.push(randomNumber);
+//     i++;
+//   }
+// }
+// console.log(arr);
+// console.log(arrRandom);
+
+// Playing with digits
+
+// function digPow(n: number, p: number) {
+//   const nString = n.toString();
+//   let result = 0;
+//   for (let i = 0; i < nString.length; i++) {
+//     result += parseInt(nString[i]) ** p;
+//     p++;
+//   }
+//   return parseInt(`${result / n}`) ? result / n : -1;
+//   // ...
+// }
+
+// Equal Sides Of An Array
+
+// function findEvenIndex(arr: number[]) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (sumNums(arr.slice(0, i)) === sumNums(arr.slice(i + 1))) {
+//       return i;
+//     }
+//   }
+//   return -1;
+//   function sumNums(nums: number[]) {
+//     return nums.reduce((a, b) => a + b, 0);
+//   }
+// }
+
+// console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]));
+
+// Break camelCase
+
+// function solution(string: string) {
+//   let value = "";
+//   for (let i = 0; i < string.length; i++) {
+//     if (/[A-Z]/.test(string[i])) {
+//       value += " " + string[i];
+//     } else {
+//       value += string[i];
+//     }
+//   }
+//   return value;
+// }
+
+// // solution("camelCasing");
+
+// console.log(solution(""));
+
+// function isPrime(num: number) { // worning
+//   if (num === 0) return true;
+//   if (num === 1) return false;
+//   if (num === 2) return true;
+//   if (num < 0) return false;
+//   for (let i = 2; i < num; i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isPrime(0));
+// console.log(isPrime(1));
+// console.log(isPrime(2));
+// console.log(isPrime(3));
+// console.log(isPrime(9));
+// console.log(isPrime(10));
+// console.log(isPrime(11));
+// console.log(isPrime(12));
+// console.log(isPrime(13));
+// console.log(isPrime(14));
+// console.log(isPrime(15));
+
+// Sort the odd
+// function sortArray(array: number[]) {
+//   // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+//   /*
+//   new arr = [null , 8 , 6 , null , 4]
+//   odd arr = [5,3]
+//   sort odd arr
+//   loop in new
+//     if null push odd arr
+
+//   */
+
+//   let newArr = array.map((num) => (num % 2 ? null : num));
+//   let oddArr = array.filter((num) => num % 2).sort((a, b) => a - b);
+
+//   let counter = 0;
+//   console.log(newArr);
+//   console.log(oddArr);
+//   for (let i = 0; i < newArr.length; i++) {
+//     if (newArr[i] === null) {
+//       newArr[i] = oddArr[counter];
+//       counter++;
+//     }
+//   }
+//   console.log(newArr);
+// }
+// sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
+// //  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
