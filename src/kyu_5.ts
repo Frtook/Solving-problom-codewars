@@ -243,3 +243,41 @@
 // }
 
 // console.log(two(dividedBy(eight())));
+
+// Maximum subarray sum
+
+// var maxSequence = function (arr: number[]) {
+//   if (arr.every((e) => e < 0)) return 0;
+//   let data = new Map();
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr.length; j++) {
+//       data.set(
+//         `${i + 1}${j}`,
+//         arr.slice(j, i + 1).reduce((a, b) => a + b, 0)
+//       );
+//     }
+//   }
+
+//   return Math.max(...data.values());
+// };
+
+// console.log(maxSequence([23, 44, 39]));
+
+// First non-repeating character
+
+// function firstNonRepeatingLetter(s: string) {
+//   let arrString = s.split("").map((e) => e.toLowerCase());
+//   let indexLetter;
+//   for (let i = 0; i < arrString.length; i++) {
+//     if (
+//       arrString.indexOf(arrString[i]) === arrString.lastIndexOf(arrString[i])
+//     ) {
+//       indexLetter = i;
+//       break;
+//     }
+//   }
+
+//   return indexLetter != undefined ? s[indexLetter] : "";
+// }
+
+// console.log(firstNonRepeatingLetter("M<p"));
