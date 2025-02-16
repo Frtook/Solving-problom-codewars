@@ -282,4 +282,35 @@
 
 // console.log(firstNonRepeatingLetter("M<p"));
 
-console.log("gg");
+// String incrementer
+// function incrementString(strng: string) {
+//   const end = strng.slice(strng.length - 1, strng.length);
+//   if (end === "9") {
+//     const number = strng.replace(/[a-z]/gi, "");
+//     const zero = number.length - (+number + 1).toString().length;
+//     return strng.replace(/[0-9]/gi, "") + "0".repeat(zero) + (+number + 1);
+//   }
+//   if (Number.isInteger(+end)) {
+//     return strng.slice(0, strng.length - 1) + (+end + 1);
+//   }
+//   return strng + 1;
+// }
+// console.log(incrementString("foo009"));
+// console.log(incrementString("foo-1"));
+// // console.log(incrementString("foo0042"));
+// // console.log(incrementString("foo93"));
+// // console.log(incrementString("foo0099"));
+
+// Not very secure
+
+function alphanumeric(string: string) {
+  console.log(/^[a-z0-9]+$/i.test(string));
+}
+
+alphanumeric("forGin");
+alphanumeric("forin");
+alphanumeric("Q8!QJW");
+alphanumeric("PassW0rd");
+alphanumeric("h6");
+alphanumeric("7QIVz6X4T8Okp ZsWFhsDXflcjw");
+alphanumeric("qa");
