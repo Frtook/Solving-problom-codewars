@@ -303,14 +303,65 @@
 
 // Not very secure
 
-function alphanumeric(string: string) {
-  console.log(/^[a-z0-9]+$/i.test(string));
-}
+// function alphanumeric(string: string) {
+//   console.log(/^[a-z0-9]+$/i.test(string));
+// }
 
-alphanumeric("forGin");
-alphanumeric("forin");
-alphanumeric("Q8!QJW");
-alphanumeric("PassW0rd");
-alphanumeric("h6");
-alphanumeric("7QIVz6X4T8Okp ZsWFhsDXflcjw");
-alphanumeric("qa");
+// alphanumeric("forGin");
+// alphanumeric("forin");
+// alphanumeric("Q8!QJW");
+// alphanumeric("PassW0rd");
+// alphanumeric("h6");
+// alphanumeric("7QIVz6X4T8Okp ZsWFhsDXflcjw");
+// alphanumeric("qa");
+
+// Count IP Addresses
+
+// function ipsBetween(start: string, end: string) {
+//   const endArr = end.split(".");
+//   const startArr = start.split(".");
+//   let count = 0;
+//   count += (+endArr[0] - +startArr[0]) * 256 ** 3;
+//   count += (+endArr[1] - +startArr[1]) * 256 ** 2;
+//   count += (+endArr[2] - +startArr[2]) * 256;
+//   count += +endArr[3] - +startArr[3];
+//   return count;
+// }
+// // ipsBetween("10.0.0.0", "10.0.0.50");
+// // ipsBetween("20.0.0.10", "20.0.1.0");
+// // ipsBetween("10.11.12.13", "10.11.13.0");
+// // ipsBetween("160.0.0.0", "160.0.1.0");
+// // ipsBetween("170.0.0.0", "170.1.0.0");
+// ipsBetween("50.0.0.0", "50.1.1.1");
+// ipsBetween("170.0.0.0", "170.1.0.0");
+
+// Pick peaks
+
+// function pickPeaks(arr: number[]) {
+//   let peaks = [];
+//   let pos = [];
+//   for (let i = 1; i < arr.length - 1; i++) {
+//     if (arr[i] > arr[i - 1]) {
+//       let j = i;
+//       while (arr[j] === arr[j + 1]) j++; // Move forward in case of a plateau
+//       if (arr[j] > arr[j + 1]) {
+//         // Confirm it's a peak
+//         peaks.push(arr[i]);
+//         pos.push(i);
+//       }
+//     }
+//   }
+
+//   return { pos, peaks };
+// }
+// console.log(
+//   pickPeaks([
+//     1, 2, 5, 4, 3, 2, 3, 6, 4, 1, 2, 3, 3, 4, 5, 3, 2, 1, 2, 3, 5, 5, 4, 3,
+//   ])
+// );
+
+// Regex Password Validation
+
+const Validation = (pass:string) =>{
+  return console.log(/\w{/g.test(pass))
+}
