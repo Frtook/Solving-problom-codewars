@@ -362,6 +362,36 @@
 
 // Regex Password Validation
 
-const Validation = (pass:string) =>{
-  return console.log(/\w{/g.test(pass))
-}
+// const Validation = (pass:string) =>{
+//   return console.log(/\w{/g.test(pass))
+// }
+
+// int32 to IPv4
+
+// function int32ToIp(int32: number) {
+//   //...
+//   let one = 0;
+//   let two = 0;
+//   let three = 0;
+//   let four = 0;
+
+//   while (int32 > 0) {
+//     if (int32 > 256 ** 3) {
+//       one += 1;
+//       int32 -= 256 ** 3;
+//     } else if (int32 > 256 ** 2) {
+//       two += 1;
+//       int32 -= 256 ** 2;
+//     } else if (int32 > 256) {
+//       three += 1;
+//       int32 -= 256;
+//     } else {
+//       four += 1;
+//       int32--;
+//     }
+//   }
+//   return `${one}.${two}.${three}.${four}`;
+// }
+// console.log(int32ToIp(2149583361));
+// console.log(int32ToIp(8));
+// console.log(int32ToIp(32));
